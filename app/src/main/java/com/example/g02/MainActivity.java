@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     public static ArrayList<Persona> lstPersonas = new ArrayList<>();
 
     private Button btnAgregarPersona, btnMostrarPersonas;
+    private Button btnIrAcercaD;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         btnAgregarPersona = findViewById(R.id.btnIrAgregar);
 
         btnMostrarPersonas = findViewById(R.id.btnMostrarLista);
+        btnIrAcercaD = findViewById(R.id.btnAcercad);
 
         btnAgregarPersona.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, AgregarPersonaActivity.class));
@@ -36,6 +39,12 @@ public class MainActivity extends AppCompatActivity {
         btnMostrarPersonas.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, MostrarListaActivity.class));
 
+        });
+        btnIrAcercaD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, AcercaDeActivity.class));
+            }
         });
 
         /*rellenarLista();
